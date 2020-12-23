@@ -6,7 +6,7 @@
 /*   By: tnakamur <tnakamur@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 21:26:22 by tnakamur          #+#    #+#             */
-/*   Updated: 2020/12/23 22:19:03 by tnakamur         ###   ########.fr       */
+/*   Updated: 2020/12/23 22:29:44 by tnakamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ function read_file(arg, call) {
 	call(buff.toString());
 }
 
-var call_back = function (buf) {
-	ans = buf.split('\n').length - 1;
+var call_back = function (file_content) {
+	ans = file_content.split('\n').length - 1;
 	console.log(ans);
 }
 
