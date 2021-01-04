@@ -6,7 +6,7 @@
 /*   By: tnakamur <tnakamur@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 21:26:22 by tnakamur          #+#    #+#             */
-/*   Updated: 2020/12/23 22:29:44 by tnakamur         ###   ########.fr       */
+/*   Updated: 2021/01/04 22:14:21 by tnakamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@ const fs = require('fs');
 
 var buff;
 var ans;
+
+if (process.argv.length < 3) {
+	console.error("error: NO arguments");
+	process.exit(1);
+}
 
 function read_file(arg, call) {
 	buff = fs.readFileSync(arg, 'utf-8');

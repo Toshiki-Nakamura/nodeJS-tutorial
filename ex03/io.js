@@ -6,12 +6,17 @@
 /*   By: tnakamur <tnakamur@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 20:23:35 by tnakamur          #+#    #+#             */
-/*   Updated: 2020/12/23 22:19:22 by tnakamur         ###   ########.fr       */
+/*   Updated: 2021/01/04 22:14:49 by tnakamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 const fs = require('fs');
 const { argv } = require('process');
+
+if (process.argv.length < 3) {
+	console.error("error: NO arguments");
+	process.exit(1);
+}
 
 function read_file(arg)
 {

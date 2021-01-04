@@ -1,8 +1,8 @@
 const http = require("http");
 
-if (process.argv.length < 3)
-{
-	console.error("error: NO URL");
+if (process.argv.length < 3) {
+	console.error("error: NO arguments");
+	
 }
 
 const req = http.get(process.argv[2], (res) => {
