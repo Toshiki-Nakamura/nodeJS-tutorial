@@ -16,9 +16,7 @@ const req = http.get(url, (res) => {
 		console.log(data.toString().length);
 		console.log(data.toString());
 	}))
-});
-
-req.on('error', (e) => {
+}).on('error', (e) => {
 	console.error(e.message);
 });
 req.end();

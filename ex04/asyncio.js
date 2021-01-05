@@ -6,7 +6,7 @@
 /*   By: tnakamur <tnakamur@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 21:26:22 by tnakamur          #+#    #+#             */
-/*   Updated: 2021/01/04 22:14:21 by tnakamur         ###   ########.fr       */
+/*   Updated: 2021/01/05 13:05:30 by tnakamur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ if (process.argv.length < 3) {
 }
 
 function read_file(arg, call) {
-	buff = fs.readFileSync(arg, 'utf-8');
+	buff = fs.readFile(arg, 'utf-8');
 	call(buff.toString());
 }
 
