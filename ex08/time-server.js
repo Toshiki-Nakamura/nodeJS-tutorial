@@ -1,4 +1,4 @@
-if (process.argv[2] != "8080" || process.argv.length != 3)
+if (process.argv.length != 3)
 {
 	console.error("arugument error");
 	return ;
@@ -17,11 +17,20 @@ hh = ((hh < 10) ? '0' : "") + hh;
 mm = ((mm < 10) ? '0' : "") + mm;
 
 var date = YY + '-' + MM + '-' + DD + ' ' + hh + ':' + mm;
+var port = parseInt(process.argv[2]);
 
-var http = require('http');
+var net = require('net');
 
-var server = http.createServer(function(req, res) {
-	console.log(date);
-	res.end();
+var server = net.createServer((conn) => {
+	// console.log(date);
+	conn.write(date);
+	conn.on("error", (e) => {
+		console.error("error: " + e.message);
+	})
+	conn.end("\n");
 });
-server.listen(process.argv[2]);
+
+server.listen(port);
+server.on("error", (err) => {
+	console.error("Error: " + err.message);
+})
