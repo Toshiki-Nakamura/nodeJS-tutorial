@@ -3,6 +3,12 @@ if (process.argv.length != 3)
 	console.error("arugument error");
 	return ;
 }
+var port = parseInt(process.argv[2]);
+if (!(0 <= port && port <= 65535))
+{
+	console.error("BAD PORT");
+	return ;
+}
 
 var data = new Date();
 var YY = data.getFullYear();
@@ -17,7 +23,6 @@ hh = ((hh < 10) ? '0' : "") + hh;
 mm = ((mm < 10) ? '0' : "") + mm;
 
 var date = YY + '-' + MM + '-' + DD + ' ' + hh + ':' + mm;
-var port = parseInt(process.argv[2]);
 
 var net = require('net');
 
