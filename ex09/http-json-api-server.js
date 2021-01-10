@@ -50,7 +50,7 @@ var server = http.createServer(function (request, res) {
 	// console.log(parth);
 	var string = parseIsoStrings(parth.searchParams.get('iso'));
 	var time = {};
-	// console.log(string);
+	console.log(string);
 	if (parth.pathname === '/api/parsetime' && string)
 		time = get_parsetime(string);
 	else if (parth.pathname === '/api/unixtime' && string)
