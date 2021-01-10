@@ -57,7 +57,7 @@ var server = http.createServer(function (request, res) {
 		time = get_unixtime(string);
 	else
 		string = null;
-	res.writeHead(200, { 'Content-Type': 'application/json' });
+	//res.writeHead(200, { 'Content-Type': 'application/json' });
 	(string != null) ? res.end(JSON.stringify(time) + "\n") : res.end("invalid\n");
 })
 server.listen(port);
