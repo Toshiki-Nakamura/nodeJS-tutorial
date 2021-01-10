@@ -46,14 +46,14 @@ var parseIsoStrings = function(string) {
 }
 
 var server = http.createServer(function (request, res) {
-	var parth = new URL(request.url, origin);
-	// console.log(parth);
-	var string = parseIsoStrings(parth.searchParams.get('iso'));
+	var parse = new URL(request.url, origin);
+	// console.log(parse);
+	var string = parseIsoStrings(parse.searchParams.get('iso'));
 	var time = {};
 	// console.log(string);
-	if (parth.pathname === '/api/parsetime' && string)
+	if (parse.pathname === '/api/parsetime' && string)
 		time = get_parsetime(string);
-	else if (parth.pathname === '/api/unixtime' && string)
+	else if (parse.pathname === '/api/unixtime' && string)
 		time = get_unixtime(string);
 	else
 		string = null;
