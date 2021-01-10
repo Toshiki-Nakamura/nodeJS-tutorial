@@ -18,10 +18,13 @@ var url = require('url');
 
 var get_parsetime = function (string) {
 	const date = new Date(string);
+	var hh = date.getHours();
+	var mm = date.getMinutes();
+	var ss = date.getSeconds();
 	return {
-		'hour': date.getHours(),
-		'minute': date.getMinutes(),
-		'second': date.getSeconds(),
+		'hour': hh = ((hh < 10) ? "0" : "") + hh,
+		'minute': mm = ((mm < 10) ? "0" : "") + mm,
+		'second': ss = ((ss < 10) ? "0" : "") + ss,
 	}
 }
 
