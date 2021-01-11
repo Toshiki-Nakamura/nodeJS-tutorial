@@ -53,14 +53,13 @@ var server = http.createServer(function (request, res) {
 	// console.log(parse);
 	var string = parseIsoStrings(parse.searchParams.get('iso'));
 	var time = {};
-	// console.log(string);
 	if (parse.pathname === '/api/parsetime' && string)
 		time = get_parsetime(string);
 	else if (parse.pathname === '/api/unixtime' && string)
 		time = get_unixtime(string);
 	else
 		string = null;
-	//res.writeHead(200, { 'Content-Type': 'application/json' });
+	res.writeHead(200, { 'Content-Type': 'application/json' });
 	(string != null) ? res.end(JSON.stringify(time) + "\n") : res.end("invalid\n");
 })
 server.listen(port);
